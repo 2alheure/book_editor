@@ -1,29 +1,11 @@
 # book_editor
 
-## Project setup
-```
-npm install
-```
+## Project
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+This project is done for the ECV end-of-the-year projects.  
+It intends to provide a mobile platform to write and read books, for anyone. Its purpose is to end up being the Youtube-like library, where everyone can publish his own book and earn monney from that.  
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Dependancies
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+This project is a Progressive Web App, written with [Vue.js](https://vuejs.org/).  
+It also uses a hand written API, which repository can be found on [my GitHub](https://github.com/2alheure/book_editor_api).

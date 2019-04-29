@@ -1,0 +1,59 @@
+* {
+    --color-primaire: #00A19A;
+    --color-primaire-p1: #006E69;
+    --color-primaire-m1: #35B1AB;
+    --color-secondaire: #393D97;
+    --color-ternaire: #F42126;
+    --font: Roboto, Arial, 'Helvetica Neue', sans-serif;
+    --font-title: Ubuntu, 'Times New Romans', sans-serif;
+  
+    font-family: var(--font);
+    font-size: 14px;
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-title);
+}
+
+a {
+    color: initial;
+}
+
+a:visited {
+    color: var(--color-secondaire);
+}
+
+a.button {
+    color: white;
+    background-color: var(--color-primaire);
+    padding: 5px 10px;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 5px;
+    text-decoration: none;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+}
+
+a.button.big {
+    padding: 10px;
+}
+  
+input {
+    outline: none;
+    border-bottom: var(--color-primaire);
+}
+
+input:focus {
+    outline: var(--color-primaire);
+}
+
+#app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+}

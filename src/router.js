@@ -9,9 +9,24 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+      path: '/connect',
+      name: 'connect',
+      component: () => import(/* webpackChunkName: "connect" */ './views/Connect.vue')
+    },
+    {
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: () => import(/* webpackChunkName: "search" */ './views/Search.vue')
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: () => import(/* webpackChunkName: "profile" */ './views/Profile.vue')
     },
     {
       path: '/about',
