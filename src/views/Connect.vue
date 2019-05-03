@@ -1,9 +1,22 @@
+<style>
+    input {
+        display: block;
+        margin: 15px auto;
+    }
+
+    a {
+        display: inline-block;
+        margin: 15px;
+    }
+</style>
+
+
 <template>
     <div>
         <h1>Connexion</h1>
         <input type="text" name="login" id="login">
         <input type="password" name="password" id="password">
-        <a href="#">Créer un compte</a><a href="#">Mot de passe oublié&nbsp;?</a>
+        <a href="#">Créer un compte</a><a href="#">Mot de passe oublié&nbsp;?</a><br>
         <router-link to="/" class="button">Connexion</router-link>
         <p>OU</p>
         <a href="#" class="button big"><i class="fas fa-facebook"></i></a>

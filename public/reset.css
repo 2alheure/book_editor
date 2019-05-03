@@ -15,6 +15,22 @@
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-title);
+    color: var(--color-secondaire);
+    text-align: left;
+}
+
+h1 {
+    font-size: 24px;
+    color: var(--color-primaire);
+    text-align: center;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 16px;
 }
 
 a {
@@ -26,6 +42,7 @@ a:visited {
 }
 
 a.button {
+    display: inline-block;
     color: white;
     background-color: var(--color-primaire);
     padding: 5px 10px;
@@ -44,6 +61,7 @@ a.button.big {
 input {
     outline: none;
     border-bottom: var(--color-primaire);
+    margin: 15px;
 }
 
 input:focus {
@@ -56,4 +74,5 @@ input:focus {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
+    margin: 0;
 }

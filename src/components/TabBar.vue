@@ -1,24 +1,23 @@
 <style scoped>
     nav {
-        position: absolute;
+        position: fixed;
         z-index: 10;
         bottom: 0;
         left: 0;
         width: 100%;
         margin: auto;
-        padding: 10px 0;
+        padding: 20px 0;
         text-align: center;
         background-color: #fff;
         border-top: 1px solid #aaa;
-        /* Box shadow top */
+        box-shadow: 0 -4px 4px #ddd;
     }
 
     nav > a {
         border-left: 1px solid #aaa;
         display: inline-block;
         width: 25%;
-        margin: auto;
-        height: 25px;
+        margin: 0 auto;
     }
 
     nav > a:first-child {
@@ -27,10 +26,20 @@
 
     a > i {
         color: var(--color-primaire);
+        font-size: 28px;
+        line-height: 10px;
+        margin: 0;
+        vertical-align: middle;
     }
 
     .router-link-exact-active {
       color: var(--color-secondaire);
+    }
+</style>
+
+<style>
+    #app {
+        padding-bottom: 50px;
     }
 </style>
 
