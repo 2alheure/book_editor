@@ -48,7 +48,7 @@
         <router-link to="/"><i class="fas fa-book" :class="{active: isActive==1}"></i></router-link>
         <router-link to="/search"><i class="fas fa-search" :class="{active: isActive==2}"></i></router-link>
         <router-link to="/my-books"><i class="fas fa-feather-alt" :class="{active: isActive==3}"></i></router-link>
-        <router-link to="/profile"><i class="fas fa-user" :class="{active: isActive==4}"></i></router-link>
+        <router-link to="/profile/me"><i class="fas fa-user" :class="{active: isActive==4}"></i></router-link>
     </nav>
 </template>
 

@@ -28,7 +28,7 @@ export default new Router({
       component: () => import(/* webpackChunkName: "myBooks" */ './views/MyBooks.vue')
     },
     {
-      path: '/profile',
+      path: '/profile/:id',
       name: 'profile',
       component: () => import(/* webpackChunkName: "profile" */ './views/Profile.vue')
     },
@@ -39,6 +39,11 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    },
+    {
+      path: '/book-details/:id',
+      name: 'bookDetails',
+      component: () => import(/* webpackChunkName: "book-details" */ './views/BookDetails.vue')
     }
   ]
 })
