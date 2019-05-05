@@ -1,14 +1,15 @@
 <style scoped>
     .book-tuile-container {
         position: relative;
-        width: 150px;
+        min-width: 150px;
+        max-width: 150px;
         height: 225px;
         padding: 0;
         margin: 10px;
         border-radius: 5px;
         border: 2px solid var(--color-secondaire);
         box-shadow: 4px 4px 4px var(--color-secondaire);
-        display: inline-block;
+        text-align: center;
     }
 
     .title, .subtitle, .author, .info-point {

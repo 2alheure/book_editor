@@ -2,11 +2,9 @@
   <div>
     <BackButton />
 
-    <h1>Rechercher</h1>
-
-    <p>Cette fonctionnalité n'est pour le moment pas implémentée. Nous nous excusons pour la gêne occasionnée.</p>
+    <p>This is the page where my books appear.</p>
     
-    <TabBar :isActive="2" />
+    <TabBar :isActive="3" />
   </div>
 </template>
 
@@ -15,7 +13,7 @@ import BackButton from '@/components/BackButton.vue'
 import TabBar from '@/components/TabBar.vue'
 
 export default {
-  name: 'search',
+  name: 'myBooks',
   components: {
     BackButton,
     TabBar

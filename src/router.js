@@ -23,6 +23,11 @@ export default new Router({
       component: () => import(/* webpackChunkName: "search" */ './views/Search.vue')
     },
     {
+      path: '/my-books',
+      name: 'myBooks',
+      component: () => import(/* webpackChunkName: "myBooks" */ './views/MyBooks.vue')
+    },
+    {
       path: '/profile',
       name: 'profile',
       component: () => import(/* webpackChunkName: "profile" */ './views/Profile.vue')

@@ -2,7 +2,7 @@
     nav {
         position: fixed;
         z-index: 10;
-        bottom: 0;
+        bottom: -1px;
         left: 0;
         width: 100%;
         margin: auto;
@@ -32,23 +32,23 @@
         vertical-align: middle;
     }
 
-    .router-link-exact-active {
+    .active {
       color: var(--color-secondaire);
     }
 </style>
 
 <style>
     #app {
-        padding-bottom: 50px;
+        padding-bottom: 70px;
     }
 </style>
 
 <template>
     <nav>
-        <router-link to="/"><i class="fas fa-book"></i></router-link>
-        <router-link to="/search"><i class="fas fa-search"></i></router-link>
-        <router-link to="/my-books"><i class="fas fa-feather-alt"></i></router-link>
-        <router-link to="/profile"><i class="fas fa-user"></i></router-link>
+        <router-link to="/"><i class="fas fa-book" :class="{active: isActive==1}"></i></router-link>
+        <router-link to="/search"><i class="fas fa-search" :class="{active: isActive==2}"></i></router-link>
+        <router-link to="/my-books"><i class="fas fa-feather-alt" :class="{active: isActive==3}"></i></router-link>
+        <router-link to="/profile"><i class="fas fa-user" :class="{active: isActive==4}"></i></router-link>
     </nav>
 </template>
 
@@ -56,9 +56,11 @@
 export default {
     name: 'MyButton',
     props: {
-        text: String,
-        url: String,
-        isBig: { type: Boolean, required: false, default: false}
+        isActive: { 
+            type: Number, 
+            required: false, 
+            default: 0
+        }
     }
 }
 </script>

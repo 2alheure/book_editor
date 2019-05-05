@@ -24,7 +24,7 @@
     <BookTuileSlider v-if="booksMine.length > 0" :books="booksMine" />
     <p v-else>Vous n'avez aucune publication.</p>
 
-    <TabBar />
+    <TabBar :isActive="1" />
   </div>
 </template>
 
@@ -41,6 +41,14 @@ export default {
   data: function () {
     return {
       booksReco: [
+        {
+          id: 41,
+          title: "C'est l'histoire de ma vie",
+          subtitle: "Chapitre II : mon adolescence",
+          author: "Jean-Bernard de Laroche-Foucault",
+          img: "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
+          isMine: false
+        },
         {
           id: 42,
           title: "C'est l'histoire de ma vie",
