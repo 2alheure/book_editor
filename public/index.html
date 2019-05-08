@@ -8,10 +8,19 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="<%= BASE_URL %>reset.css">
     <title>book_editor</title>
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="<%= BASE_URL %>axios.js"></script>
+    <script>
+      var baseURL = 'http://localhost';
+      function baseURL(segments) {
+        return baseURL+segments;
+      }
+    </script>
   </head>
   <body>
     <noscript>
-      <strong>Nous somme désolés, mais Book Editor ne peut fonctionner correctement si JavaScript n'est pas activé. Veuillez l'activer afin de pouvoir continuer votre visite.</strong>
+      <strong>Nous sommes désolés, mais Book Editor ne peut fonctionner correctement si JavaScript n'est pas activé. Veuillez l'activer afin de pouvoir continuer votre visite.</strong>
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->

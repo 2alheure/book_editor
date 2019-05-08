@@ -46,7 +46,7 @@ export default {
           title: "C'est l'histoire de ma vie",
           subtitle: "Chapitre II : mon adolescence",
           author: "Jean-Bernard de Laroche-Foucault",
-          img: "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
+          image: "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
           isMine: false
         },
         {
@@ -54,7 +54,7 @@ export default {
           title: "C'est l'histoire de ma vie",
           subtitle: "Chapitre II : mon adolescence",
           author: "Jean-Bernard de Laroche-Foucault",
-          img: "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
+          image: "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
           isMine: false
         },
         {
@@ -62,7 +62,7 @@ export default {
           title: "C'est l'histoire de ta vie",
           subtitle: "Chapitre III : ma vie adulte",
           author: "Jean-Bernard de Laroche-Foucault",
-          img: "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
+          image: "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
           isMine: false
         }
       ],
@@ -72,7 +72,7 @@ export default {
           title: "Alice au Pays des Merveilles",
           subtitle: "",
           author: "Lewis Caroll",
-          img: "https://media.istockphoto.com/illustrations/alices-adventures-in-wonderland-illustration-id185304146",
+          image: "https://media.istockphoto.com/illustrations/alices-adventures-in-wonderland-illustration-id185304146",
           isMine: false
         },
         {
@@ -80,7 +80,7 @@ export default {
           title: "C'est l'histoire de ta vie",
           subtitle: "Chapitre III : ma vie adulte",
           author: "Jean-Bernard de Laroche-Foucault",
-          img: "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
+          image: "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
           isMine: false
         }
       ],
@@ -90,7 +90,7 @@ export default {
           title: "Bien utiliser Book Editor",
           subtitle: "Tutoriel à l'intention du nouvel utilisateur",
           author: "Book Editor",
-          img: "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
+          image: "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
           isMine: false
         },
         {
@@ -98,7 +98,7 @@ export default {
           title: "Bien utiliser Book Editor",
           subtitle: "Usage avancé et bonnes pratiques",
           author: "Book Editor",
-          img: "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
+          image: "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
           isMine: false
         }
       ],
@@ -108,7 +108,7 @@ export default {
           title: "Un livre d'exemple",
           subtitle: "Un terrain pour bien s'entraîner",
           author: "Jean-Bernard de Laroche-Foucault",
-          img: "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
+          image: "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
           isMine: true
         }
       ],

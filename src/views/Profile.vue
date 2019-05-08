@@ -40,33 +40,39 @@
 
     <h1>Profil utilisateur</h1>
 
-    <h2>L'auteur</h2>
-    <p class="author">
-      <img :src="image" :alt="pseudo">
-      <span class="else">
-        <span class="author-name">{{pseudo}}</span>
-        <a
-          href="#"
-          class="button"
-          style="background-color: var(--color-secondaire)"
-        >{{nbBooks}} livre{{nbBooks>1?'s':''}}</a>
-        <a href="#" class="button" style="background-color: var(--color-ternaire)">S'abonner</a>
-      </span>
+    <template v-if="!isError">
+      <h2>L'auteur</h2>
+      <p class="author">
+        <img :src="image" :alt="pseudo">
+        <span class="else">
+          <span class="author-name">{{pseudo}}</span>
+          <a
+            href="#"
+            class="button"
+            style="background-color: var(--color-secondaire)"
+          >{{nbBooks}} livre{{nbBooks>1?'s':''}}</a>
+          <a href="#" class="button" style="background-color: var(--color-ternaire)">S'abonner</a>
+        </span>
+      </p>
+
+      <h2>Statistiques</h2>
+      <p class="statistics">
+        <Stat :fa="'book-open'" :num="nbReads"/>
+        <Stat :fa="'download'" :num="nbDL"/>
+        <Stat :fa="'star'" :num="note"/>
+        <Stat :fa="'comment'" :num="nbComments"/>
+        <a href="#" class="button">Plus</a>
+      </p>
+
+      <h2>Avis</h2>
+      <AvisNotes :id="id"/>
+
+      <TabBar :isActive="4"/>
+    </template>
+    <p v-else>
+      Nous ne parvenons pas à récupérer les informations sur cet utilisateur. Veuillez vérifier votre connection internet et réessayer ultérieurement.
     </p>
 
-    <h2>Statistiques</h2>
-    <p class="statistics">
-      <Stat :fa="'book-open'" :num="nbReads"/>
-      <Stat :fa="'download'" :num="nbDL"/>
-      <Stat :fa="'star'" :num="note"/>
-      <Stat :fa="'comment'" :num="nbComments"/>
-      <a href="#" class="button">Plus</a>
-    </p>
-
-    <h2>Avis</h2>
-    <AvisNotes :id="id"/>
-
-    <TabBar :isActive="4"/>
   </div>
 </template>
 
@@ -86,16 +92,32 @@ export default {
   },
   data: function() {
     return {
-      id: 42,
-      pseudo: "2alheure 2dtension Long Nom",
-      image:
-        "https://cdn.discordapp.com/avatars/185470129193091072/6551a9208529f2fbbdcb3a522ef46160.png?size=512",
-      nbBooks: 15,
-      nbReads: 5765839,
-      nbDL: 3438508,
-      note: 4.85,
-      nbComments: 255809
+      id: $route.params.id,
+      pseudo: "",
+      image: "",
+      nbBooks: 0,
+      nbReads: 0,
+      nbDL: 0,
+      nbComments: 0,
+      note: 0,
+      isError: true
     };
+  },
+  mounted() {
+    axios
+      .get(baseURL('/user?user_id='+this.id))
+      .then(res => {
+        this.pseudo = res.pseudo;
+        this.image = res.image;
+        this.nbBooks = res.nbBooks;
+        this.nbReads = res.nbReads;
+        this.nbDL = res.nbDL;
+        this.note = res.note;
+        this.nbComment = res.nbComment;
+        this.isError = false;
+      })
+      .catch(error => {})
+    ;
   }
 };
 </script>

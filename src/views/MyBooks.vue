@@ -41,7 +41,7 @@ export default {
           title: "C'est l'histoire de ma vie",
           subtitle: "Chapitre II : mon adolescence",
           author: "Jean-Bernard de Laroche-Foucault",
-          img: "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
+          image: "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
           isMine: true
         },
         {
@@ -49,7 +49,7 @@ export default {
           title: "C'est l'histoire de ma vie",
           subtitle: "Chapitre II : mon adolescence",
           author: "Jean-Bernard de Laroche-Foucault",
-          img: "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
+          image: "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
           isMine: true
         },
         {
@@ -57,7 +57,7 @@ export default {
           title: "C'est l'histoire de ta vie",
           subtitle: "Chapitre III : ma vie adulte",
           author: "Jean-Bernard de Laroche-Foucault",
-          img: "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
+          image: "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
           isMine: true
         }
       ]

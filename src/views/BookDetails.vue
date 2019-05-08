@@ -108,7 +108,7 @@
 
     <h2>Métadonnées</h2>
     <p class="metadata">
-      <img :src="img" :alt="title">
+      <img :src="image" :alt="title">
       <span class="else">
         <span class="title">{{title}}</span>
         <span class="subtitle">{{subtitle}}</span>
@@ -176,7 +176,7 @@ export default {
           "https://cdn.discordapp.com/avatars/185470129193091072/6551a9208529f2fbbdcb3a522ef46160.png?size=512",
         nbBooks: 15
       },
-      img:
+      image:
         "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
       desc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit voluptatum neque dolorem sit, maxime quos! Blanditiis in tempore error, architecto soluta dolorem, dolore aliquam incidunt eaque ab quia maiores quas! Magni odit veniam blanditiis nihil officiis debitis, mollitia nobis voluptatem praesentium architecto neque consectetur. Obcaecati esse vel aliquam voluptatum ad expedita saepe, sit voluptate necessitatibus architecto. Soluta beatae deserunt harum? Ipsum delectus officia repudiandae tempora unde quod ex, cupiditate aut facere ab animi itaque numquam magni, blanditiis, laudantium recusandae quas commodi voluptatem? Ad quidem dicta beatae earum voluptates deleniti! Possimus. Quo esse excepturi ipsum a laudantium ex incidunt dolorem perspiciatis. Quia quisquam ipsam, dolorum tempore reiciendis corporis dolore nobis facere temporibus, deleniti, eum libero. Tempora explicabo qui quo debitis deserunt? Non sapiente odit voluptatibus repudiandae cumque recusandae, nemo corrupti aut aperiam, necessitatibus quisquam alias laboriosam fuga! Placeat sunt qui officia quae culpa libero eveniet? Molestias ullam nihil voluptates labore odio.",

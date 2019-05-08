@@ -60,7 +60,7 @@
 
 
 <template>
-    <div class="book-tuile-container" :style="{backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0)), url(' + img + ')', backgroundSize: 'contain'}" @click="$router.push('book-details/'+id)">
+    <div class="book-tuile-container" :style="{backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0)), url(' + image + ')', backgroundSize: 'contain'}" @click="$router.push('book-details/'+id)">
         <p class="title">{{title}}</p>
         <p class="subtitle">{{subtitle}}</p>
         <p v-if="!isMine" class="author">{{author}}</p>
