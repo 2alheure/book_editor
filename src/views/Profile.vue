@@ -66,13 +66,13 @@
 
       <h2>Avis</h2>
       <AvisNotes :id="id"/>
-
-      <TabBar :isActive="4"/>
     </template>
+    <ErrorMessage v-else-if="(errorMessage != null)" :msg="errorMessage" />
     <p v-else>
-      Nous ne parvenons pas à récupérer les informations sur cet utilisateur. Veuillez vérifier votre connection internet et réessayer ultérieurement.
+      Nous ne parvenons pas à récupérer les informations sur cet utilisateur. Veuillez vérifier votre connexion internet et réessayer ultérieurement.
     </p>
 
+    <TabBar :isActive="4"/>
   </div>
 </template>
 
@@ -80,6 +80,7 @@
 import BackButton from "@/components/BackButton.vue";
 import Stat from "@/components/Stat.vue";
 import AvisNotes from "@/components/AvisNotes.vue";
+import ErrorMessage from "@/components/ErrorMessage.vue";
 import TabBar from "@/components/TabBar.vue";
 
 export default {
@@ -88,11 +89,12 @@ export default {
     BackButton,
     Stat,
     AvisNotes,
+    ErrorMessage,
     TabBar
   },
   data: function() {
     return {
-      id: $route.params.id,
+      id: 0,
       pseudo: "",
       image: "",
       nbBooks: 0,
@@ -100,24 +102,29 @@ export default {
       nbDL: 0,
       nbComments: 0,
       note: 0,
-      isError: true
+      isError: true,
+      errorMessage: null
     };
   },
   mounted() {
     axios
-      .get(baseURL('/user?user_id='+this.id))
-      .then(res => {
-        this.pseudo = res.pseudo;
-        this.image = res.image;
-        this.nbBooks = res.nbBooks;
-        this.nbReads = res.nbReads;
-        this.nbDL = res.nbDL;
-        this.note = res.note;
-        this.nbComment = res.nbComment;
-        this.isError = false;
-      })
-      .catch(error => {})
-    ;
+      .get('http://localhost/book_editor_php_api/user?user_id='+this.$route.params.id)
+      .then(response => response.data)
+      .then(response => {
+        if (response.status) {
+          this.id = response.id;
+          this.pseudo = response.pseudo;
+          this.image = response.image;
+          this.nbBooks = response.nbBooks;
+          this.nbReads = response.nbReads;
+          this.nbDL = response.nbDL;
+          this.nbComments = response.nbComments;
+          this.note = response.note;
+          this.isError = false;
+        } else {
+          this.errorMessage = response.error
+        }
+      });
   }
 };
 </script>

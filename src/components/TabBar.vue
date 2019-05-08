@@ -54,7 +54,7 @@
 
 <script>
 export default {
-    name: 'MyButton',
+    name: 'tabBar',
     props: {
         isActive: { 
             type: Number, 

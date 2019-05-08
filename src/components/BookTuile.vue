@@ -75,7 +75,7 @@ export default {
         title: String,
         subtitle: String,
         author: String,
-        img: String,
+        image: String,
         isMine: Boolean
     }
 }

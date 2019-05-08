@@ -69,12 +69,16 @@ a.button.big {
   
 input {
     outline: none;
-    border-bottom: var(--color-primaire);
-    margin: 15px;
+    border: none;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid var(--color-primaire);
+    padding: 2px;
+    border-radius: 2px;
 }
 
 input:focus {
-    outline: var(--color-primaire);
+    border: 1px solid var(--color-primaire-m1);
+    box-shadow: 0 0 5px var(--color-primaire-p1);
 }
 
 #app {
@@ -82,13 +86,13 @@ input:focus {
 }
 
 .bg-cp {
-    background-color: var(--color-primaire) important; 
+    background-color: var(--color-primaire) !important; 
 }
 
 .bg-cs {
-    background-color: var(--color-secondaire) important; 
+    background-color: var(--color-secondaire) !important; 
 }
 
 .bg-ct {
-    background-color: var(--color-ternaire) important; 
+    background-color: var(--color-ternaire) !important; 
 }

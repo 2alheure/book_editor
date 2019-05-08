@@ -9,7 +9,8 @@
         color: var(--color-primaire);
         font-size: 24px;
         line-height: 10px;
-        vertical-align: middle;
+        vertical-align: top;
+        margin: 0;
     }
 </style>
 

@@ -37,7 +37,7 @@ export default {
     return  {
       books: [
         {
-          id: 41,
+          id: 1,
           title: "C'est l'histoire de ma vie",
           subtitle: "Chapitre II : mon adolescence",
           author: "Jean-Bernard de Laroche-Foucault",
@@ -45,7 +45,7 @@ export default {
           isMine: true
         },
         {
-          id: 42,
+          id: 2,
           title: "C'est l'histoire de ma vie",
           subtitle: "Chapitre II : mon adolescence",
           author: "Jean-Bernard de Laroche-Foucault",
@@ -53,7 +53,7 @@ export default {
           isMine: true
         },
         {
-          id: 43,
+          id: 3,
           title: "C'est l'histoire de ta vie",
           subtitle: "Chapitre III : ma vie adulte",
           author: "Jean-Bernard de Laroche-Foucault",

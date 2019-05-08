@@ -27,13 +27,19 @@ p {
   <div>
     <h1>Connexion</h1>
     <p>
-      <input type="text" name="login" id="login">
-      <input type="password" name="password" id="password">
+      <input type="text" name="login" id="login" v-model="login" autofocus>
+      <input type="password" name="password" id="password" v-model="password">
+
+      <a href="#" class="button" @click="connect">Connexion</a>
+    </p>
+
+    <ErrorMessage v-if="(errorMessage != null)" :msg="errorMessage" />
+
+    <p>
       <a href="#">Créer un compte</a>
       <a href="#">Mot de passe oublié&nbsp;?</a>
       <br>
-      <router-link to="/" class="button">Connexion</router-link>
-      <br>OU
+      OU
       <br>
       <a href="#" class="button big">
         <i class="fab fa-facebook-f"></i>
@@ -48,3 +54,37 @@ p {
   </div>
 </template>
 
+<script>
+import ErrorMessage from "@/components/ErrorMessage.vue";
+
+export default {
+  name: 'connect',
+  components: {
+    ErrorMessage,
+  },
+  data: function () {
+    return {
+      login: '',
+      password: '',
+      errorMessage: null
+    }
+  },
+  methods: {
+    connect: function (e) {
+      var params = new URLSearchParams();
+      params.append('login', this.login);
+      params.append('password', this.password);
+      
+      axios
+        .post('http://localhost/book_editor_php_api/signin', params)
+        .then(res => res.data)
+        .then(res => {
+          if (res.status) {
+            this.$store.commit('setToken', res.token);
+            this.$router.push('/');
+          } else this.errorMessage = res.error;
+        })
+    }
+  }
+}
+</script>
