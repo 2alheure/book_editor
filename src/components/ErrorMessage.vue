@@ -4,9 +4,9 @@
         background-color: var(--color-ternaire);
         opacity: 0.7;
         color: #fff;
-        padding: 5px;
-        border: 4px solid #fff, 1px solid #333;
+        padding: 10px;
         border-radius: 5px;
+        margin: 20px 10px;
     }
 </style>
 

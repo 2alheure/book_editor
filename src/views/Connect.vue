@@ -80,8 +80,9 @@ export default {
         .then(res => res.data)
         .then(res => {
           if (res.status) {
+            axios.defaults.headers.common = {'Authorization': res.token }
             this.$store.commit('setToken', res.token);
-            this.$router.push('/');
+            this.$router.push('/home');
           } else this.errorMessage = res.error;
         })
     }

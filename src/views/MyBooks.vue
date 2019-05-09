@@ -12,11 +12,16 @@
 
     <h1>Mes publications</h1>
 
-    <div class="container">
-      <BookTuile v-for="book in books" :key="book.id" v-bind="book"/>
-    </div>
-    <a href="#" class="button">Nouveau livre</a>
-
+    <template v-if="!isError">
+      <div class="container">
+        <BookTuile v-for="book in books" :key="book.id" v-bind="book"/>
+      </div>
+      <a href="#" class="button">Nouveau livre</a>
+    </template>
+    <ErrorMessage v-else-if="(errorMessage != null)" :msg="errorMessage" />
+    <p v-else>
+      Nous ne parvenons pas à récupérer les informations sur cet utilisateur. Veuillez vérifier votre connexion internet et réessayer ultérieurement.
+    </p>
     <TabBar :isActive="3" />
   </div>
 </template>
@@ -24,6 +29,7 @@
 <script>
 import BackButton from '@/components/BackButton.vue'
 import BookTuile from '@/components/BookTuile.vue'
+import ErrorMessage from "@/components/ErrorMessage.vue";
 import TabBar from '@/components/TabBar.vue'
 
 export default {
@@ -31,37 +37,28 @@ export default {
   components: {
     BackButton,
     BookTuile,
+    ErrorMessage,
     TabBar
   },
   data: function () {
     return  {
-      books: [
-        {
-          id: 1,
-          title: "C'est l'histoire de ma vie",
-          subtitle: "Chapitre II : mon adolescence",
-          author: "Jean-Bernard de Laroche-Foucault",
-          image: "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
-          isMine: true
-        },
-        {
-          id: 2,
-          title: "C'est l'histoire de ma vie",
-          subtitle: "Chapitre II : mon adolescence",
-          author: "Jean-Bernard de Laroche-Foucault",
-          image: "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
-          isMine: true
-        },
-        {
-          id: 3,
-          title: "C'est l'histoire de ta vie",
-          subtitle: "Chapitre III : ma vie adulte",
-          author: "Jean-Bernard de Laroche-Foucault",
-          image: "https://images.leslibraires.ca/books/9782843048067/front/9782843048067_large.jpg",
-          isMine: true
-        }
-      ]
+      books: [],
+      isError: true,
+      errorMessage: null
     }
+  },
+  mounted() {
+    axios
+      .get('http://localhost/book_editor_php_api/myBooks')
+      .then(response => response.data)
+      .then(response => {
+        if (response.status) {
+          this.books = response.books;
+          this.isError = false;
+        } else {
+          this.errorMessage = response.error
+        }
+      });
   }
 }
 </script>
