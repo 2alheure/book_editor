@@ -33,13 +33,12 @@ p {
       <a href="#" class="button" @click="connect">Connexion</a>
     </p>
 
-    <ErrorMessage v-if="(errorMessage != null)" :msg="errorMessage" />
+    <ErrorMessage v-if="(errorMessage != null)" :msg="errorMessage"/>
 
     <p>
       <a href="#">Créer un compte</a>
       <a href="#">Mot de passe oublié&nbsp;?</a>
-      <br>
-      OU
+      <br>OU
       <br>
       <a href="#" class="button big">
         <i class="fab fa-facebook-f"></i>
@@ -58,34 +57,34 @@ p {
 import ErrorMessage from "@/components/ErrorMessage.vue";
 
 export default {
-  name: 'connect',
+  name: "connect",
   components: {
-    ErrorMessage,
+    ErrorMessage
   },
-  data: function () {
+  data: function() {
     return {
-      login: '',
-      password: '',
+      login: "",
+      password: "",
       errorMessage: null
-    }
+    };
   },
   methods: {
-    connect: function (e) {
+    connect: function(e) {
       var params = new URLSearchParams();
-      params.append('login', this.login);
-      params.append('password', this.password);
-      
-      axios
-        .post('http://localhost/book_editor_php_api/signin', params)
+      params.append("login", this.login);
+      params.append("password", this.password);
+
+      this.$axios
+        .post("http://localhost/book_editor_php_api/signin", params)
         .then(res => res.data)
         .then(res => {
           if (res.status) {
-            axios.defaults.headers.common = {'Authorization': res.token }
-            this.$store.commit('setToken', res.token);
-            this.$router.push('/home');
+            this.$axios.defaults.headers.common= {'Authorization': res.token};
+            localStorage.setItem("token", res.token);
+            this.$router.push("/home");
           } else this.errorMessage = res.error;
-        })
+        });
     }
   }
-}
+};
 </script>

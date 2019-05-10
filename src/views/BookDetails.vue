@@ -2,7 +2,7 @@
 .metadata {
   text-align: center;
   display: grid;
-  grid-template: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .metadata > img {
@@ -62,13 +62,13 @@
 .read .button,
 .dl .button {
   margin: 0;
-  width: 100px;
+  width: 120px;
 }
 
 .author {
   text-align: center;
   display: grid;
-  grid-template: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 10px;
 }
 
@@ -126,6 +126,9 @@
           <a href="#" class="button big" style="background-color: var(--color-ternaire)">Télécharger</a>
         </p>
       </div>
+      <p v-if="isMine">
+        <router-link class="button" style="background-color: var(--color-secondaire)" :to="'/book-edit/'+id"><i class="fas fa-edit"></i>Editer</router-link>
+      </p>
 
       <h2>L'auteur</h2>
       <p class="author">
@@ -157,6 +160,7 @@
     <TabBar :isActive="3"/>
   </div>
 </template>
+
 <script>
 import BackButton from "@/components/BackButton.vue";
 import Stat from "@/components/Stat.vue";
@@ -191,7 +195,7 @@ export default {
     };
   },
   mounted() {
-    axios
+    this.$axios
       .get('http://localhost/book_editor_php_api/book?book_id='+this.$route.params.id)
       .then(response => response.data)
       .then(response => {

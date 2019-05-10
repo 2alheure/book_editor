@@ -57,7 +57,7 @@ export default {
     }
   },
   mounted() {
-    axios
+    this.$axios
       .get('http://localhost/book_editor_php_api/homeBooks')
       .then(response => response.data)
       .then(response => {

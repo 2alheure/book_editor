@@ -44,6 +44,11 @@ export default new Router({
       path: '/book-details/:id',
       name: 'bookDetails',
       component: () => import(/* webpackChunkName: "book-details" */ './views/BookDetails.vue')
-    }
+    },
+    {
+      path: '/book-edit/:id',
+      name: 'bookEdit',
+      component: () => import(/* webpackChunkName: "book-edit" */ './views/BookEdit.vue')
+    },
   ]
 })

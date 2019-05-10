@@ -4,11 +4,11 @@
     --color-primaire-m1: #35B1AB;
     --color-secondaire: #393D97;
     --color-ternaire: #F42126;
-    --font: Roboto, Arial, 'Helvetica Neue', sans-serif;
-    --font-title: Ubuntu, 'Times New Romans', sans-serif;
+    --font: 'Raleway', Arial, 'Helvetica Neue', sans-serif;
+    --font-title: 'Lato', 'Times New Romans', sans-serif;
   
     font-family: var(--font);
-    font-size: 14px;
+    font-size: 16px;
     margin: 10px;
     box-sizing: border-box;
 }
@@ -67,7 +67,7 @@ a.button.big {
     padding: 10px;
 }
   
-input {
+input, textarea {
     outline: none;
     border: none;
     border-top: 1px solid #fff;
@@ -76,7 +76,7 @@ input {
     border-radius: 2px;
 }
 
-input:focus {
+input:focus, textarea:focus {
     border: 1px solid var(--color-primaire-m1);
     box-shadow: 0 0 5px var(--color-primaire-p1);
 }

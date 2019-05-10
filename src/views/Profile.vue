@@ -107,7 +107,7 @@ export default {
     };
   },
   mounted() {
-    axios
+    this.$axios
       .get('http://localhost/book_editor_php_api/user?user_id='+this.$route.params.id)
       .then(response => response.data)
       .then(response => {
