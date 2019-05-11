@@ -75,7 +75,7 @@ export default {
       params.append("password", this.password);
 
       this.$axios
-        .post("http://localhost/book_editor_php_api/signin", params)
+        .post("signin", params)
         .then(res => res.data)
         .then(res => {
           if (res.status) {

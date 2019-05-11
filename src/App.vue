@@ -7,12 +7,6 @@
 <script>
 export default {
   name: 'App',
-  data: function () {
-    return {
-      baseURL: 'http://loclahost/book_editor',
-      apiURL: 'http://loclahost/book_editor_php_api',
-    }
-  },
   methods: {
     base_url: function (segments) {
       baseURL+segments

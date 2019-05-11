@@ -46,7 +46,7 @@ export default {
   },
   mounted() {
     this.$axios
-      .get("http://localhost/book_editor_php_api/myBooks")
+      .get("myBooks")
       .then(response => response.data)
       .then(response => {
         if (response.status) {

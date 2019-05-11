@@ -135,7 +135,7 @@
         <img :src="author.image" :alt="author.pseudo">
         <span class="else">
           <span class="author-name">{{author.pseudo}}</span>
-          <router-link :to="'/search?author='+pseudo"
+          <router-link :to="'/search?author='+author.pseudo"
             class="button"
             style="background-color: var(--color-secondaire)"
           >{{author.nbBooks}} livre{{author.nbBooks>1?'s':''}}</router-link>
@@ -195,7 +195,7 @@ export default {
   },
   mounted() {
     this.$axios
-      .get('http://localhost/book_editor_php_api/book?book_id='+this.$route.params.id)
+      .get('book?book_id='+this.$route.params.id)
       .then(response => response.data)
       .then(response => {
         if (response.status) {

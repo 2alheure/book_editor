@@ -36,6 +36,7 @@ export default {
   methods: {
     statNumber(stat, symbol) {
       symbol = symbol | 0;
+      stat = stat | 0;
       if (stat / 1000 > 1)
         return this.statNumber(
           parseFloat(Math.round(stat) / 1000).toFixed(1),

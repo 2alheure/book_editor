@@ -62,7 +62,7 @@ export default {
       params.append("author", this.author);
 
       this.$axios
-        .post("http://localhost/book_editor_php_api/search", params)
+        .post("search", params)
         .then(response => response.data)
         .then(response => {
           if (response.status) {

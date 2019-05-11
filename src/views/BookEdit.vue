@@ -76,7 +76,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://localhost/book_editor_php_api/bookEdit?book_id=" + this.$route.params.id)
+      .get("bookEdit?book_id=" + this.$route.params.id)
       .then(response => response.data)
       .then(response => {
         if (response.status) {
@@ -111,7 +111,7 @@ export default {
 
 
       this.$axios
-        .post("http://localhost/book_editor_php_api/bookEdit", params)
+        .post("bookEdit", params)
         .then(response => response.data)
         .then(response => {
           if (response.status) {

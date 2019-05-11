@@ -1,17 +1,5 @@
 <template>
-  <div>
-    <BackButton />
-
-    <h1>Écrire un livre</h1>
-
-    <template v-if="!isError">
-
-    </template>
-    <ErrorMessage v-else-if="(errorMessage != null)" :msg="errorMessage" />
-    <p v-else>Nous ne parvenons pas à communiquer avec le serveur. Veuillez vérifier votre connexion internet et réessayer ultérieurement.</p>
     
-    <TabBar2 />
-  </div>
 </template>
 
 <script>
@@ -33,7 +21,7 @@ export default {
   },
   mounted() {
     this.$axios
-      .get('user?user_id='+this.$route.params.id)
+      .get('read?book_id='+this.$route.params.id)
       .then(response => response.data)
       .then(response => {
         if (response.status) {
