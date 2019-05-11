@@ -48,13 +48,14 @@
         position: absolute;
         bottom: 0;
         right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .info-point > i {
         font-size: 24px;
-        line-height: 10px;
-        vertical-align: middle;
-        text-align: center;
+        margin: 0;
     }
 </style>
 
@@ -64,7 +65,7 @@
         <p class="title">{{title}}</p>
         <p class="subtitle">{{subtitle}}</p>
         <p v-if="!isMine" class="author">{{author}}</p>
-        <p v-if="isMine" class="info-point"><i class="fas fa-info"></i></p>
+        <p v-if="isMine" class="info-point" @click="$router.push('book-write/'+id)"><i class="fas fa-feather"></i></p>
     </div>
 </template>
 

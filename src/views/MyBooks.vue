@@ -1,64 +1,61 @@
 <style scoped>
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-  }
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
 </style>
 
 <template>
   <div>
-    <BackButton />
+    <BackButton/>
 
     <h1>Mes publications</h1>
 
     <template v-if="!isError">
-      <div class="container">
-        <BookTuile v-for="book in books" :key="book.id" v-bind="book"/>
-      </div>
+      <BookContainer :books="books"/>
+
       <a href="#" class="button">Nouveau livre</a>
     </template>
-    <ErrorMessage v-else-if="(errorMessage != null)" :msg="errorMessage" />
-    <p v-else>
-      Nous ne parvenons pas à récupérer les informations sur cet utilisateur. Veuillez vérifier votre connexion internet et réessayer ultérieurement.
-    </p>
-    <TabBar :isActive="3" />
+    <ErrorMessage v-else-if="(errorMessage != null)" :msg="errorMessage"/>
+    <p v-else>Nous ne parvenons pas à récupérer les informations sur cet utilisateur. Veuillez vérifier votre connexion internet et réessayer ultérieurement.</p>
+    <TabBar :isActive="3"/>
   </div>
 </template>
 
 <script>
-import BackButton from '@/components/BackButton.vue'
-import BookTuile from '@/components/BookTuile.vue'
+import BackButton from "@/components/BackButton.vue";
+import BookContainer from "@/components/BookContainer.vue";
 import ErrorMessage from "@/components/ErrorMessage.vue";
-import TabBar from '@/components/TabBar.vue'
+import TabBar from "@/components/TabBar.vue";
 
 export default {
-  name: 'myBooks',
+  name: "myBooks",
   components: {
     BackButton,
-    BookTuile,
+    BookContainer,
     ErrorMessage,
     TabBar
   },
-  data: function () {
-    return  {
+  data: function() {
+    return {
       books: [],
       isError: true,
       errorMessage: null
-    }
+    };
   },
   mounted() {
     this.$axios
-      .get('http://localhost/book_editor_php_api/myBooks')
+      .get("http://localhost/book_editor_php_api/myBooks")
       .then(response => response.data)
       .then(response => {
         if (response.status) {
           this.books = response.books;
           this.isError = false;
         } else {
-          this.errorMessage = response.error
+          this.errorMessage = response.error;
         }
       });
   }
-}
+};
 </script>

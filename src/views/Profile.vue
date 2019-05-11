@@ -46,11 +46,10 @@
         <img :src="image" :alt="pseudo">
         <span class="else">
           <span class="author-name">{{pseudo}}</span>
-          <a
-            href="#"
+          <router-link :to="'/search?author='+pseudo"
             class="button"
             style="background-color: var(--color-secondaire)"
-          >{{nbBooks}} livre{{nbBooks>1?'s':''}}</a>
+          >{{nbBooks}} livre{{nbBooks>1?'s':''}}</router-link>
           <a href="#" class="button" style="background-color: var(--color-ternaire)">S'abonner</a>
         </span>
       </p>

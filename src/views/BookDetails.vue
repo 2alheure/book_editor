@@ -135,11 +135,10 @@
         <img :src="author.image" :alt="author.pseudo">
         <span class="else">
           <span class="author-name">{{author.pseudo}}</span>
-          <a
-            href="#"
+          <router-link :to="'/search?author='+pseudo"
             class="button"
             style="background-color: var(--color-secondaire)"
-          >{{author.nbBooks}} livre{{author.nbBooks>1?'s':''}}</a>
+          >{{author.nbBooks}} livre{{author.nbBooks>1?'s':''}}</router-link>
           <router-link :to="'/profile/'+author.id" class="button">Détails</router-link>
         </span>
       </p>

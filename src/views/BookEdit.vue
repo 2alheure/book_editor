@@ -16,6 +16,11 @@
   input, textarea {
     width: 100%;
   }
+
+  .button > i {
+    margin: 0;
+    margin-right: 10px;
+  }
 </style>
 
 <template>
@@ -26,6 +31,7 @@
 
     <template v-if="!isError">
       <h2>Métadonnées</h2>
+      
       <p class="metadata">
         <img :src="image" :alt="title">
         <span class="else">
@@ -34,7 +40,9 @@
           <textarea name="desc" id="desc" v-model="desc" rows="4" placeholder="Description"></textarea>
         </span>
       </p>
+
       <a href="#" class="button" @click="bookUpdate">Sauvegarder</a>
+      <router-link :to="'/book-write/'+id" class="button" style="background-color: var(--color-secondaire)"><i class="fas fa-feather"></i>Écrire</router-link>
     </template>
     <ErrorMessage v-else-if="(errorMessage != null)" :msg="errorMessage"/>
     <p v-else>Nous ne parvenons pas à récupérer les informations sur cet ouvrage. Veuillez vérifier votre connexion internet et réessayer ultérieurement.</p>
