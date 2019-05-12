@@ -6,8 +6,8 @@ import './registerServiceWorker';
 window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-// window.axios.defaults.baseURL = 'http://localhost/book_editor_php_api/';
-window.axios.defaults.baseURL = 'https://book-editor-php-api.2alheure.fr/';
+window.axios.defaults.baseURL = 'http://localhost/book_editor_php_api/';
+// window.axios.defaults.baseURL = 'https://book-editor-php-api.2alheure.fr/';
 
 if (localStorage.getItem("token")) {
   window.axios.defaults.headers.common = {

@@ -143,7 +143,7 @@
           <span class="author-name">{{author.pseudo}}</span>
           <router-link :to="'/search?author='+author.pseudo"
             class="button"
-            style="background-color: var(--color-secondaire)"
+            style="background-color: var(--color-secondaire); margin-right: 10px"
           >{{author.nbBooks}} livre{{author.nbBooks>1?'s':''}}</router-link>
           <router-link :to="'/profile/'+author.id" class="button">Détails</router-link>
         </span>

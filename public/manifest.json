@@ -1,6 +1,6 @@
 {
-  "name": "book_editor",
-  "short_name": "book_editor",
+  "name": "Book &ditor",
+  "short_name": "Book &ditor",
   "icons": [
     {
       "src": "./img/icons/windows10/Square71x71Logo.scale-400.png",
@@ -518,7 +518,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "./index.html",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#4DBA87",
   "theme_color": "#4DBA87"
