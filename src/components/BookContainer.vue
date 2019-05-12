@@ -1,6 +1,6 @@
 <template v-if="books.length">
   <div class="container">
-    <BookTuile v-for="book in books" :key="book.id" v-bind="book"/>
+    <BookTuile v-for="book of books" :key="book.id" v-bind="book"/>
   </div>
 </template>
 

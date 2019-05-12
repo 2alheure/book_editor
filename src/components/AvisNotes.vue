@@ -1,5 +1,5 @@
 <template>
-    <p>Incoming soon.</p>
+    <p>AvisNote component is incoming soon.</p>
 </template>
 
 <script>

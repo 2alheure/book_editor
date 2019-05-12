@@ -12,29 +12,6 @@
         border-top: 1px solid #aaa;
         box-shadow: 0 -4px 4px #ddd;
     }
-
-    nav > a {
-        border-left: 1px solid #aaa;
-        display: inline-block;
-        width: 25%;
-        margin: 0 auto;
-    }
-
-    nav > a:first-child {
-        border-left: none;
-    }
-
-    a > i {
-        color: var(--color-primaire);
-        font-size: 28px;
-        line-height: 10px;
-        margin: 0;
-        vertical-align: middle;
-    }
-
-    .active {
-      color: var(--color-secondaire);
-    }
 </style>
 
 <style>
@@ -45,12 +22,21 @@
 
 <template>
     <nav>
-        Ceci sera ma TabBar2
+        This will be a nice TabBar for reading screen.
     </nav>
 </template>
 
 <script>
 export default {
-    name: 'tabBar2'
+    name: 'tabBarReading',
+    props: {
+        bookID: Number,
+        position: String,
+        isActive: { 
+            type: Number, 
+            required: false, 
+            default: 0
+        }
+    }
 }
 </script>

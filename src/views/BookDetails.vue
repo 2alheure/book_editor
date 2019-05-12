@@ -38,6 +38,10 @@
   color: #ada4a4;
 }
 
+.desc {
+  word-break: break-word;
+}
+
 .read-container {
   display: flex;
   justify-content: center;
@@ -115,11 +119,13 @@
           <span class="subtitle">{{subtitle}}</span>
         </span>
       </p>
+
       <p class="desc">{{desc}}</p>
+
       <div class="read-container">
         <p class="read">
           <Stat :fa="'book-open'" :num="nbReads"/>
-          <a href="#" class="button big" style="background-color: var(--color-ternaire)">Lire</a>
+          <router-link :to="'/book-read/'+id" class="button big" style="background-color: var(--color-ternaire)">Lire</router-link>
         </p>
         <p class="dl">
           <Stat :fa="'download'" :num="nbDL"/>

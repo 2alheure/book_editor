@@ -55,5 +55,10 @@ export default new Router({
       name: 'bookWrite',
       component: () => import(/* webpackChunkName: "book-write" */ './views/BookWrite.vue')
     },
+    {
+      path: '/book-read/:id',
+      name: 'bookRead',
+      component: () => import(/* webpackChunkName: "book-read" */ './views/BookRead.vue')
+    },
   ]
 })

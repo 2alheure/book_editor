@@ -16,11 +16,17 @@
 
 
 <template>
-    <a @click="$router.go(-1)"><i class="fas fa-chevron-left"></i></a>
+    <a @click="$router.go(url | -1)"><i class="fas fa-chevron-left"></i></a>
 </template>
 
 <script>
 export default {
-    name: 'backButton'
+    name: 'backButton',
+    props: {
+        url: {
+            type: String,
+            required: false
+        }
+    }
 }
 </script>
