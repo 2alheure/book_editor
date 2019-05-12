@@ -1,5 +1,12 @@
+<style scoped>
+	div {
+		margin: 0;
+		padding: 0;
+	}
+</style>
+
 <template>
-	<p>{{value}}</p>
+	<div v-html="value"></div>
 </template>
 
 <script>

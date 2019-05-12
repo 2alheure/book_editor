@@ -1,13 +1,13 @@
 <style scoped>
     a {
         position: absolute;
-        left: 15px;
+        left: 0;
         top: 25px;
     }
 
     a > i {
         color: var(--color-primaire);
-        font-size: 24px;
+        font-size: 2rem;
         line-height: 10px;
         vertical-align: top;
         margin: 0;

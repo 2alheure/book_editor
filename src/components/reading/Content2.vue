@@ -10,7 +10,7 @@
 		<h3 v-if="title">{{title}}</h3>
 
 		<template v-for="(item, index) in content">
-			<Content2 
+			<Content 
 				v-if="item.type == 'container'" 
 				:key="level + '-' + item.level + '-' + index"
 				:level="level + '-' + item.level + '-' + index" 
@@ -35,14 +35,14 @@
 </template>
 
 <script>
-import Content2 from "@/components/reading/Content2.vue";
+import Content from "@/components/reading/Content.vue";
 import Paragraphe from "@/components/reading/Paragraphe.vue";
 import Picture from "@/components/reading/Picture.vue";
 
 export default {
-	name: 'contentReading',
+	name: 'contentReading2',
 	components: {
-		Content2,
+		Content,
 		Paragraphe,
 		Picture
 	},

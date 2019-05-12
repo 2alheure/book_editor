@@ -5,7 +5,7 @@
     <h1>{{meta.title}}</h1>
 
     <template v-if="!isError">
-      <Content :content="content" :title="null" :level="'root'"/>
+      <Content :content="content" :title="null" :level="'root'" />
     </template>
 
     <ErrorMessage v-else-if="(errorMessage != null)" :msg="errorMessage" />
