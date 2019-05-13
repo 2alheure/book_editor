@@ -1,11 +1,58 @@
+<style scoped>
+  .read-screen {
+    margin: 5px;
+  }
+  
+  h1 {
+    margin: 25px 0 0 0;
+  }
+
+  h2.subtitle {
+    margin: 0 0 15px 0;
+    text-align: center;
+  }
+
+  main {
+    position: relative;
+  }
+
+  .reader {
+    margin: 0;
+    padding: 10vw;
+    padding-bottom: 0;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    border-top-left-radius: 15px;
+    max-height: 100%;
+    overflow-y: scroll;
+    /* position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 5px;
+    right: 5px; */
+    background-image: linear-gradient(
+      to right, #ccc 0, #fff 10vw
+    );
+    /* mask-clip: border-box;
+    mask-image: linear-gradient(
+      to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 2px, rgba(0,0,0,1) 10vw
+    ); */
+  }
+</style>
+
 <template>
-  <div>
+  <div class="read-screen">
     <BackButton />
 
     <h1>{{meta.title}}</h1>
+    <h2 class="subtitle">{{meta.subtitle}}</h2>
 
     <template v-if="!isError">
-      <Content :content="content" :title="null" :level="'root'" />
+      <main class="transparent reader">
+        <!-- <div class="reader"> -->
+          <Content :content="content" :title="null" :level="'root'" />
+        <!-- </div> -->
+      </main>
     </template>
 
     <ErrorMessage v-else-if="(errorMessage != null)" :msg="errorMessage" />

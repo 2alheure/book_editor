@@ -3,7 +3,7 @@
     --color-primaire-p1: #006E69;
     --color-primaire-m1: #35B1AB;
     --color-secondaire: #393D97;
-    --color-ternaire: #F42126;
+    --color-ternaire: #E14D25;
     --font: 'Raleway', Arial, 'Helvetica Neue', sans-serif;
     --font-title: 'Lato', 'Times New Romans', sans-serif;
   
@@ -85,6 +85,11 @@ input:focus, textarea:focus {
     margin: 0;
 }
 
+.transparent {
+    margin: 0;
+    padding: 0;
+}
+
 .bg-cp {
     background-color: var(--color-primaire) !important; 
 }
@@ -95,4 +100,45 @@ input:focus, textarea:focus {
 
 .bg-ct {
     background-color: var(--color-ternaire) !important; 
+}
+
+div.ul {
+    margin: 0;
+    padding: 0 0 0 2rem;
+}
+
+span.li {
+    height: 30px;
+    overflow: hidden;
+    display: list-item;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+
+span.li.title {
+    font-family: var(--font-title);
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 20px;
+    vertical-align: middle;
+    text-overflow: ellipsis;
+}
+
+span.li i {
+    margin: 0 10px 0 0;
+    font-size: 28px;
+    line-height: 10px;
+    vertical-align: middle;
+}
+
+span.li div {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+span.li p {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 0;
 }

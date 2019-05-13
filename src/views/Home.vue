@@ -1,6 +1,26 @@
+<style scoped>
+.home {
+  margin: 0;
+}
+
+p.inline-logo {
+  margin: 25px 0 0 0;
+  padding: 0;
+  text-align: center;
+}
+
+p.inline-logo > img {
+  max-height: 2rem;
+  max-width: 100%;
+  margin: 0;
+}
+</style>
+
 <template>
-  <div class="home" style="margin:0">
-    <h1>Book &amp;ditor</h1>
+  <div class="home">
+    <p class="inline-logo">
+      <img src="../assets/logo_inline.png" alt="Book &ditor">
+    </p>
 
     <template v-if="!isError">
       <h2>Mes recommandations</h2>

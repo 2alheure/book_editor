@@ -32,6 +32,10 @@
   display: inline-block;
   margin: auto;
 }
+
+#abo {
+  margin-left: 10px;
+}
 </style>
 
 <template>
@@ -47,10 +51,10 @@
         <span class="else">
           <span class="author-name">{{pseudo}}</span>
           <router-link :to="'/search?author='+pseudo"
-            class="button"
+            class="button books"
             style="background-color: var(--color-secondaire)"
-          >{{nbBooks}} livre{{nbBooks>1?'s':''}}</router-link>
-          <a href="#" class="button" style="background-color: var(--color-ternaire)">S'abonner</a>
+          >{{nbBooks}}2 livre{{nbBooks>1?'s':''}}</router-link>
+          <a href="#" class="button" id="abo" style="background-color: var(--color-ternaire)">S'abonner</a>
         </span>
       </p>
 

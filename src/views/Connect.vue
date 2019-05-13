@@ -63,8 +63,8 @@ export default {
   },
   data: function() {
     return {
-      login: "",
-      password: "",
+      login: "2alheure",
+      password: "2alheure",
       errorMessage: null
     };
   },
@@ -83,6 +83,9 @@ export default {
             localStorage.setItem("token", res.token);
             this.$router.push("/home");
           } else this.errorMessage = res.error;
+        })
+        .catch(err => {
+          this.errorMessage = 'Le serveur de données semble innaccessible. Veuillez vérifier votre connexion et réessayer ultérieurement.';
         });
     }
   }

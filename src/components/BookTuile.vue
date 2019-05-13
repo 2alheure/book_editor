@@ -12,6 +12,10 @@
   text-align: center;
 }
 
+.book-tuile-container a {
+  text-decoration: none;
+}
+
 .title,
 .subtitle,
 .author,
@@ -55,7 +59,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
 }
 
 .write > i {
