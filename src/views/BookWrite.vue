@@ -2,7 +2,7 @@
   <div>
     <BackButton />
 
-    <h1>Écrire un livre</h1>
+    <h1>{{meta.title}}</h1>
 
     <template v-if="!isError">
       <Content :content="content" :title="null" :level="'root'" />
@@ -15,14 +15,16 @@
 </template>
 
 <script>
-import BackButton from '@/components/BackButton.vue'
-import Content from '@/components/writing/Content.vue'
-import TabBar from '@/components/writing/TabBar.vue'
+import BackButton from '@/components/BackButton.vue';
+import EditButton from "@/components/writing/EditButton.vue";
+import Content from '@/components/writing/Content.vue';
+import TabBar from '@/components/writing/TabBar.vue';
 
 export default {
   name: 'bookWrite',
   components: {
     BackButton,
+		EditButton,
     Content,
     TabBar
   },

@@ -102,6 +102,17 @@ input:focus, textarea:focus {
     background-color: var(--color-ternaire) !important; 
 }
 
+.edit-button, .edit-button i {
+    color: var(--color-primaire-m1);
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+h1.edit-button {
+    color: inherit;
+}
+
 div.ul {
     margin: 0;
     padding: 0 0 0 2rem;
@@ -120,8 +131,8 @@ span.li.title {
     font-weight: bold;
     font-size: 18px;
     line-height: 20px;
-    vertical-align: middle;
     text-overflow: ellipsis;
+    vertical-align: middle;
 }
 
 span.li i {
@@ -137,7 +148,7 @@ span.li div {
     padding: 0;
 }
 
-span.li p {
+span.li > p:first {
     display: inline-block;
     margin: 0 5px;
     padding: 0;

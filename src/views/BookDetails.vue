@@ -1,4 +1,8 @@
 <style scoped>
+div {
+  text-align: center;
+}
+
 .metadata {
   text-align: center;
   display: grid;
@@ -40,6 +44,7 @@
 
 .desc {
   word-break: break-word;
+  text-align: left;
 }
 
 .read-container {
@@ -64,7 +69,7 @@
 }
 
 .read .button,
-.dl .button {
+.dl .button, .share {
   margin: 0;
   width: 120px;
 }
@@ -132,6 +137,8 @@
           <a href="#" class="button big" style="background-color: var(--color-ternaire)">Télécharger</a>
         </p>
       </div>
+      <a href="#" class="button big share" style="background-color: var(--color-ternaire)">Partager</a>
+
       <p v-if="isMine">
         <router-link class="button" style="background-color: var(--color-secondaire)" :to="'/book-edit/'+id"><i class="fas fa-edit"></i>Editer</router-link>
       </p>

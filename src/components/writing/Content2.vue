@@ -8,7 +8,7 @@
 <template>
 	<div class="transparent">
 		<span v-if="title" class="li title">
-			<i class="fas fa-sitemap"></i>{{title}}
+			<i class="fas fa-sitemap"></i>{{title}}<EditButton :position="level" />
 		</span>
 
 		<div class="ul">
@@ -39,6 +39,7 @@
 </template>
 
 <script>
+import EditButton from "@/components/writing/EditButton.vue";
 import Content from "@/components/writing/Content.vue";
 import Paragraphe from "@/components/writing/Paragraphe.vue";
 import Picture from "@/components/writing/Picture.vue";
@@ -46,6 +47,7 @@ import Picture from "@/components/writing/Picture.vue";
 export default {
 	name: 'contentWriting2',
 	components: {
+		EditButton,
 		Content,
 		Paragraphe,
 		Picture
