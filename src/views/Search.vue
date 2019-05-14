@@ -1,14 +1,24 @@
+<style scoped>
+  p {
+    text-align: center;
+  }
+  
+  input {
+    width: 80%;
+  }
+</style>
+
 <template>
   <div>
     <BackButton />
 
     <h1>Rechercher</h1>
 
-    <p>
+    <p class="transparent">
       <input type="text" name="generic" id="generic" v-model="generic" placeholder="Rechercher" autofocus>
     </p>
 
-    <p>
+    <p class="transparent">
       <input type="text" name="title" id="title" v-model="title" placeholder="Titre">
       <input type="text" name="subtitle" id="subtitle" v-model="subtitle" placeholder="Sous-titre">
       <input type="text" name="author" id="author" v-model="author" placeholder="Auteur">

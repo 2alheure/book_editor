@@ -1,5 +1,5 @@
 <template v-if="books.length">
-  <div class="container">
+  <div class="container transparent">
     <BookTuile v-for="book of books" :key="book.id" v-bind="book"/>
   </div>
 </template>

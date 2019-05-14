@@ -1,5 +1,6 @@
 <style scoped>
 .book-tuile-container {
+  display: inline-block;
   position: relative;
   min-width: 150px;
   max-width: 150px;
@@ -69,7 +70,7 @@
 
 
 <template>
-  <div class="book-tuile-container" :style="{backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0)), url(' + image + ')', backgroundSize: 'contain'}">
+  <div class="book-tuile-container" :style="{backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0)), url(' + image + ')', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}">
     <router-link :to="'book-details/'+id">
         <span class="title">{{title}}</span>
         <span class="subtitle">{{subtitle}}</span>

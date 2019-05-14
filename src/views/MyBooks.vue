@@ -15,7 +15,7 @@
     <template v-if="!isError">
       <BookContainer :books="books"/>
 
-      <a href="#" class="button">Nouveau livre</a>
+      <router-link to="/book-edit/new" class="button">Nouveau livre</router-link>
     </template>
     <ErrorMessage v-else-if="(errorMessage != null)" :msg="errorMessage"/>
     <p v-else>Nous ne parvenons pas à récupérer les informations sur cet utilisateur. Veuillez vérifier votre connexion internet et réessayer ultérieurement.</p>
