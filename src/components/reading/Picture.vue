@@ -1,3 +1,9 @@
+<style scoped>
+	img {
+		max-width: 100%;
+	}
+</style>
+
 <template>
 	<img :src="src" :alt="alt" />
 </template>
@@ -8,7 +14,7 @@ export default {
 	props: {
 		level: String,
 		src: String,
-		alt: Object
+		alt: String
 	}
 }
 </script>

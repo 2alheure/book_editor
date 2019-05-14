@@ -1,19 +1,32 @@
 <style scoped>
 	i {
 		color: var(--color-primaire-p1);
-	}
+  }
+  
+  .writing-paragraphe {
+    width: inherit;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 </style>
 
 <template>
   <span class="li">
     <i class="fas fa-paragraph"></i>
-	<div v-html="value"></div>
+	  <p class="writing-paragraphe">{{value}}</p>
+    <EditButton :position="level" />
   </span>
 </template>
 
 <script>
+import EditButton from "@/components/writing/EditButton.vue";
+
 export default {
   name: "paragrapheWriting",
+  components: {
+    EditButton
+  },
   props: {
     level: String,
     value: String

@@ -1,12 +1,5 @@
-<style scoped>
-	div {
-		margin: 0;
-		padding: 0;
-	}
-</style>
-
 <template>
-	<div>
+	<div class="transparent">
 		<h3 v-if="title">{{title}}</h3>
 
 		<template v-for="(item, index) in content">

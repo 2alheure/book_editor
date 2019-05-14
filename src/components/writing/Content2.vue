@@ -7,8 +7,8 @@
 
 <template>
 	<div class="transparent">
-		<span v-if="title" class="li title">
-			<i class="fas fa-sitemap"></i>{{title}}<EditButton :position="level" />
+		<span v-if="title" class="li">
+			<i class="fas fa-sitemap"></i><h3>{{title}}</h3><EditButton :position="level" />
 		</span>
 
 		<div class="ul">
