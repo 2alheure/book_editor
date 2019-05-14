@@ -115,14 +115,18 @@ h1.edit-button {
 
 div.ul {
     margin: 0;
-    padding: 0 0 0 2rem;
+    padding: 0 0 0 calc(.75rem + 10px);
+    margin: 0 0 0 calc(.75rem + 10px);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    border-left: 1px solid var(--color-ternaire);
 }
 
 #app div.ul:first-child {
     padding: 0;
+    margin: 0;
+    border-left: none;
 }
 
 span.li {
@@ -133,6 +137,10 @@ span.li {
     justify-content: flex-start;
     align-items: center;
     margin: 0;
+}
+
+span.li i::before {
+    text-align: center;
 }
 
 span.li i {
