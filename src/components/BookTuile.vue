@@ -76,7 +76,7 @@
         <span class="subtitle">{{subtitle}}</span>
         <span v-if="!isMine" class="author">{{author}}</span>
     </router-link>
-    <router-link v-if="isMine" class="write" :to="'/book-write/'+id">
+    <router-link v-if="isMine" class="write" :to="'/book-write/'+id+'?position=root'">
       <i class="fas fa-feather"></i>
     </router-link>
   </div>

@@ -24,7 +24,7 @@
       <input type="text" name="author" id="author" v-model="author" placeholder="Auteur">
     </p>
 
-    <a href="#" class="button" @click="search">Rechercher</a>
+    <a href="#" class="button big" @click="search">Rechercher</a>
     
     <BookContainer :books="books" />
 

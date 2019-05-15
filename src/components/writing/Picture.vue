@@ -17,7 +17,7 @@
   <span class="li">
     <i class="fas fa-image"></i>
     <p class="transparent"><img :src="src" :alt="alt"></p>
-    <EditButton :position="level" />
+    <EditButton :position="position" />
   </span>
 </template>
 
@@ -30,7 +30,7 @@ export default {
     EditButton
   },
   props: {
-    level: String,
+    position: String,
     src: String,
     alt: String
   }

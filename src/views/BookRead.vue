@@ -25,6 +25,7 @@
     border-top-left-radius: 15px;
     max-height: 100%;
     overflow-y: scroll;
+    text-align: left;
     /* position: absolute;
     top: 0;
     bottom: 0;

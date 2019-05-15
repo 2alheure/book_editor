@@ -8,28 +8,30 @@
 <template>
 	<div class="transparent">
 		<span v-if="title" class="li">
-			<i class="fas fa-sitemap"></i><h3>{{title}}</h3><EditButton :position="level" />
+			<i class="fas fa-sitemap"></i>
+			<h3 @click="test()">{{title}}</h3>
+			<EditButton :position="position" />
 		</span>
 
 		<div class="ul">
 			<template v-for="(item, index) in content">
 				<Content 
 					v-if="item.type == 'container'" 
-					:key="level + '-' + item.level + '-' + index"
-					:level="level + '-' + item.level + '-' + index" 
+					:key="position + '/' + index"
+					:position="position + '/' + index" 
 					:title="item.title" 
 					:content="item.content" 
 				/>
 				<Paragraphe 
 					v-if="item.type == 'paragraphe'" 
-					:key="level + '-' + item.level + '-' + index"
-					:level="level + '-' + item.level + '-' + index" 
+					:key="position + '/' + index"
+					:position="position + '/' + index" 
 					:value="item.value" 
 				/>
 				<Picture 
 					v-else-if="item.type == 'image'" 
-					:key="level + '-' + item.level + '-' + index"
-					:level="level + '-' + item.level + '-' + index" 
+					:key="position + '/' + index"
+					:position="position + '/' + index" 
 					:src="item.src" 
 					:alt="item.alt" 
 				/>
@@ -53,9 +55,15 @@ export default {
 		Picture
 	},
 	props: {
-		level: String,
+		position: String,
 		title: String,
 		content: Array
+	},
+	methods: {
+		test() {
+			console.log(this.position)
+			this.$router.push('/book-write/'+this.$route.params.id+'?position='+this.position);
+		}
 	}
 }
 </script>

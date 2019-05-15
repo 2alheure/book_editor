@@ -45,7 +45,7 @@
       </p>
 
       <a href="#" class="button" @click="bookUpdate">Sauvegarder</a>
-      <router-link v-if="id" :to="'/book-write/'+id" class="button" style="background-color: var(--color-secondaire)"><i class="fas fa-feather"></i>Écrire</router-link>
+      <router-link v-if="id" :to="'/book-write/'+id+'?position=root'" class="button" style="background-color: var(--color-secondaire)"><i class="fas fa-feather"></i>Écrire</router-link>
     </template>
     <p v-else>Nous ne parvenons pas à récupérer les informations sur cet ouvrage. Veuillez vérifier votre connexion internet et réessayer ultérieurement.</p>
     <ErrorMessage v-if="(errorMessage != null)" :msg="errorMessage"/>

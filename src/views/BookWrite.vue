@@ -5,7 +5,7 @@
     <h1>{{meta.title}}</h1>
 
     <template v-if="!isError">
-      <Content :content="content" :title="null" :level="'root'" />
+      <Content :content="content" :title="null" :position="position" />
     </template>
     <ErrorMessage v-else-if="(errorMessage != null)" :msg="errorMessage" />
     <p v-else>Nous ne parvenons pas à communiquer avec le serveur. Veuillez vérifier votre connexion internet et réessayer ultérieurement.</p>
@@ -30,6 +30,7 @@ export default {
   },
   data: function () {
     return  {
+      position: this.$route.query.position,
       meta: [],
       content: [],
       isError: true,
@@ -38,7 +39,7 @@ export default {
   },
   mounted() {
     this.$axios
-      .get('bookContent?book_id='+this.$route.params.id)
+      .get('bookContent?book_id='+this.$route.params.id+'&position='+this.position)
       .then(response => response.data)
       .then(response => {
         if (response.status) {

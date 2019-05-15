@@ -9,13 +9,22 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
+  .writing-paragraphe >>> p {
+    overflow: hidden;
+    display: inline;
+  }
+
+  .writing-paragraphe >>> br {
+    display: none;
+  }
 </style>
 
 <template>
   <span class="li">
     <i class="fas fa-paragraph"></i>
-	  <p class="writing-paragraphe">{{value}}</p>
-    <EditButton :position="level" />
+	  <p class="writing-paragraphe" v-html="value" style=""></p>
+    <EditButton :position="position" />
   </span>
 </template>
 
@@ -28,7 +37,7 @@ export default {
     EditButton
   },
   props: {
-    level: String,
+    position: String,
     value: String
   }
 };

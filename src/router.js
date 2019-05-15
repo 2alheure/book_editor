@@ -60,5 +60,10 @@ export default new Router({
       name: 'bookRead',
       component: () => import(/* webpackChunkName: "book-read" */ './views/BookRead.vue')
     },
+    {
+      path: '/bloc-edit/:id',
+      name: 'blocEdit',
+      component: () => import(/* webpackChunkName: "bloc-edit" */ './views/BlocEdit.vue')
+    },
   ]
 })
