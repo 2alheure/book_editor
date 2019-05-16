@@ -39,6 +39,11 @@
       to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 2px, rgba(0,0,0,1) 10vw
     ); */
   }
+
+  .reader >>> i, .reader >>> b {
+    margin: 0;
+    padding: 0;
+  }
 </style>
 
 <template>
