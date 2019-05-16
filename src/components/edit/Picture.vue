@@ -11,7 +11,7 @@
     <PictureInput 
       class="transparent"
       accept="image/jpeg,image/png"
-      :prefill="src"
+      :prefill="$parent.item.src"
       :custom-strings="{
         drag: 'Modifiez l\'image en cliquant ou en déposant une autre image sur celle-ci.',
         tap: 'Cliquez sur l\'image pour la modifier.'
@@ -21,8 +21,8 @@
       :hideChangeButton="true"
       @change="handleImageChange"
     />
-    <input type="text" name="alt-bloc-picture" id="alt-bloc-picture" placeholder="Alternative textuelle de l'image" v-model="alt">
-    <input type="text" name="title-bloc-picture" id="title-bloc-picture" placeholder="Titre de l'image" v-model="title">
+    <input type="text" name="alt-bloc-picture" id="alt-bloc-picture" placeholder="Alternative textuelle de l'image" v-model="$parent.item.alt">
+    <input type="text" name="title-bloc-picture" id="title-bloc-picture" placeholder="Titre de l'image" v-model="$parent.item.title">
   </p>
 </template>
 
@@ -33,11 +33,6 @@ export default {
   name: 'pictureEdit',
   components: {
     PictureInput
-  },
-  props: {
-    src: String,
-    alt: String,
-    title: String
   },
   methods: {
     handleImageChange(image) {

@@ -7,15 +7,6 @@
 
 <template>
   <p>
-    <textarea class="transparent" name="value-bloc-paragraphe" id="value-bloc-paragraphe" rows="10" placeholder="Saisissez ici votre texte" v-model="value"></textarea>
+    <textarea class="transparent" name="value-bloc-paragraphe" id="value-bloc-paragraphe" rows="10" placeholder="Saisissez ici votre texte" v-model="$parent.item.value"></textarea>
   </p>
 </template>
-
-<script>
-export default {
-  name: 'paragrapheEdit',
-  props: {
-    value: String
-  }
-}
-</script>

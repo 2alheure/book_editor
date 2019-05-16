@@ -35,7 +35,7 @@ nav {
           style="background-color: var(--color-ternaire)"
         >Supprimer</a>
         <router-link
-          :to="'/add-bloc?book_id='+$route.params.id+'&position='+position"
+          :to="'/add-bloc/'+$route.params.id+'?position='+position"
           class="button big"
         >Ajouter un élément</router-link>
       </nav>
@@ -89,12 +89,15 @@ export default {
           .then(res => res.data)
           .then(response => {
             if (response.status) {
-              window.location.href = '/book-write/2?position=root';
+              window.location.href = '/book-write/'+this.$route.params.id+'?position=root';
             } else {
               this.isError = true;
               this.errorMessage = response.error;
             }
-          });
+        })
+        .catch(err => {
+          this.errorMessage = 'Le serveur de données semble inaccessible. Veuillez vérifier votre connexion et réessayer ultérieurement.';
+        });
       }
     }
   }

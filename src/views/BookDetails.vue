@@ -227,7 +227,10 @@ export default {
         } else {
           this.errorMessage = response.error
         }
-      });
+    })
+    .catch(err => {
+      this.errorMessage = 'Le serveur de données semble inaccessible. Veuillez vérifier votre connexion et réessayer ultérieurement.';
+    });
   }
 };
 </script>
