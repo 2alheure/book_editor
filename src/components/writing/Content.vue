@@ -8,30 +8,28 @@
 	<div class="transparent">
 			<span v-if="title" class="li title">
 				<i class="fas fa-sitemap"></i>
-				<a :href="'/book-write/'+this.$route.params.id+'?position='+this.position" class="transparent">
-					<h3 @click="test()">{{title}}</h3>
-				</a>
+				<h3 @click="redirect()">{{title}}</h3>
 				<EditButton :position="position" />
 			</span>
 
-		<div class="ul">
+		<div v-if="content" class="ul">
 			<template v-for="(item, index) in content">
 				<Content2 
 					v-if="item.type == 'container'" 
-					:key="position + '/' + index"
+					:key="position + '-' + index"
 					:position="position + '/' + index" 
 					:title="item.title" 
 					:content="item.content" 
 				/>
 				<Paragraphe 
 					v-if="item.type == 'paragraphe'" 
-					:key="position + '/' + index"
+					:key="position + '-' + index"
 					:position="position + '/' + index" 
 					:value="item.value" 
 				/>
 				<Picture 
 					v-else-if="item.type == 'image'" 
-					:key="position + '/' + index"
+					:key="position + '-' + index"
 					:position="position + '/' + index" 
 					:src="item.src" 
 					:alt="item.alt" 
@@ -61,9 +59,8 @@ export default {
 		content: Array
 	},
 	methods: {
-		test() {
-			console.log(this.position)
-			this.$router.push('/book-write/'+this.$route.params.id+'?position='+this.position);
+		redirect() {
+			window.location.href = '/book-write/'+this.$route.params.id+'?position='+this.position;
 		}
 	}
 }

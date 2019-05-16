@@ -13,6 +13,8 @@
   .writing-paragraphe >>> p {
     overflow: hidden;
     display: inline;
+    margin: 0;
+    padding: 0;
   }
 
   .writing-paragraphe >>> br {

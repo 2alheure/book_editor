@@ -50,9 +50,7 @@
 
     <template v-if="!isError">
       <main class="transparent reader">
-        <!-- <div class="reader"> -->
-          <Content :content="content" :title="null" :level="'root'" />
-        <!-- </div> -->
+        <Content :content="content" :title="null" :level="'root'" />
       </main>
     </template>
 
@@ -87,7 +85,7 @@ export default {
   },
   mounted() {
     this.$axios
-      .get('bookContent?book_id='+this.$route.params.id)
+      .get('bookContent?book_id='+this.$route.params.id+'&position=root')
       .then(response => response.data)
       .then(response => {
         if (response.status) {

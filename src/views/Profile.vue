@@ -53,7 +53,7 @@
           <router-link :to="'/search?author='+pseudo"
             class="button books"
             style="background-color: var(--color-secondaire)"
-          >{{nbBooks}}2 livre{{nbBooks>1?'s':''}}</router-link>
+          >{{nbBooks}} livre{{nbBooks>1?'s':''}}</router-link>
           <a href="#" class="button" id="abo" style="background-color: var(--color-ternaire)">S'abonner</a>
         </span>
       </p>

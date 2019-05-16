@@ -65,5 +65,10 @@ export default new Router({
       name: 'blocEdit',
       component: () => import(/* webpackChunkName: "bloc-edit" */ './views/BlocEdit.vue')
     },
+    {
+      path: '/add-bloc/:id',
+      name: 'addBloc',
+      component: () => import(/* webpackChunkName: "add-bloc" */ './views/AddBloc.vue')
+    },
   ]
 })

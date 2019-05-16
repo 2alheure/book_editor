@@ -67,7 +67,7 @@ a.button.big {
     padding: 10px;
 }
   
-input, textarea {
+input, textarea, select {
     outline: none;
     border: none;
     border-top: 1px solid #fff;
@@ -76,7 +76,7 @@ input, textarea {
     border-radius: 2px;
 }
 
-input:focus, textarea:focus {
+input:focus, textarea:focus, select:focus {
     border: 1px solid var(--color-primaire-m1);
     box-shadow: 0 0 5px var(--color-primaire-p1);
 }
@@ -154,16 +154,7 @@ span.li .edit-button {
     width: 1.5rem;
 }
 
-span.li a.transparent {
-    text-decoration: none;
-    display: block;
-    width: inherit;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-span.li a.transparent h3 {
+span.li h3 {
     font-weight: bold;
     font-family: var(--font-title);
     font-size: 1.3rem;

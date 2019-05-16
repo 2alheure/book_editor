@@ -24,7 +24,7 @@ nav {
   <div>
     <BackButton/>
 
-    <h1>{{meta.title}}</h1>
+    <h1 @click="redirect()">{{meta.title}}</h1>
 
     <template v-if="!isError">
       <Content :content="content" :title="null" :position="position"/>
@@ -99,7 +99,10 @@ export default {
           this.errorMessage = 'Le serveur de données semble inaccessible. Veuillez vérifier votre connexion et réessayer ultérieurement.';
         });
       }
-    }
+    },
+		redirect() {
+			window.location.href = '/book-write/'+this.$route.params.id+'?position=root';
+		}
   }
 };
 </script>

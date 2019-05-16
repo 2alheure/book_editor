@@ -16,7 +16,7 @@
     nav > a {
         border-left: 1px solid #aaa;
         display: inline-block;
-        width: 20%;
+        width: 33.3%;
         margin: 0 auto;
     }
 
@@ -46,10 +46,10 @@
 <template>
     <nav>
         <router-link to="#"><i class="fas fa-stream" :class="{active: isActive==1}"></i></router-link>
-        <router-link to="#"><i class="fas fa-comment" :class="{active: isActive==2}"></i></router-link>
-        <router-link to="#"><i class="fas fa-star" :class="{active: isActive==3}"></i></router-link>
-        <router-link to="#"><i class="fas fa-bug" :class="{active: isActive==4}"></i></router-link>
-        <router-link to="#"><i class="fas fa-expand" :class="{active: isActive==5}"></i></router-link>
+        <!-- <router-link to="#"><i class="fas fa-comment" :class="{active: isActive==2}"></i></router-link>
+        <router-link to="#"><i class="fas fa-star" :class="{active: isActive==3}"></i></router-link> -->
+        <router-link to="#"><i class="fas fa-bug" :class="{active: isActive==3}"></i></router-link>
+        <router-link to="#"><i class="fas fa-expand" :class="{active: isActive==4}"></i></router-link>
     </nav>
 </template>
 

@@ -23,16 +23,14 @@ nav {
 <template>
   <div class="transparent">
     <BackButton/>
-    <h1>Modifier un bloc</h1>
+    <h1>Modifier un élément</h1>
 
     <template v-if="!isError">
       <Content v-if="item.type == 'container'" :title="item.title"/>
       <Paragraphe v-if="item.type == 'paragraphe'" :value="item.value"/>
       <Picture v-else-if="item.type == 'image'" :src="item.src" :alt="item.alt"/>
     </template>
-    <p
-      v-else
-    >Nous ne parvenons pas à récupérer les informations du serveur. Veuillez vérifier votre connexion internet et réessayer ultérieurement.</p>
+    <p v-else>Nous ne parvenons pas à récupérer les informations du serveur. Veuillez vérifier votre connexion internet et réessayer ultérieurement.</p>
     <ErrorMessage v-if="(errorMessage != null)" :msg="errorMessage"/>
 
     <nav>
@@ -133,8 +131,8 @@ export default {
     deleteHandler() {
       var msg =
         this.item.type == "container"
-          ? "Êtes-vous sûr(e) de vouloir supprimer ce composant et l'ensemble de ses enfants ?"
-          : "Êtes-vous sûr(e) de vouloir supprimer ce composant ?";
+          ? "Êtes-vous sûr(e) de vouloir supprimer cet élément et l'ensemble de ses enfants ?"
+          : "Êtes-vous sûr(e) de vouloir supprimer cet élément ?";
       if (confirm(msg)) {
         this.$axios
           .get(
