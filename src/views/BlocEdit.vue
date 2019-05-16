@@ -28,21 +28,14 @@
     <template v-if="!isError">
         <Content 
             v-if="item.type == 'container'" 
-            :key="level + '-' + item.level + '-' + index"
-            :level="level + '-' + item.level + '-' + index" 
             :title="item.title" 
-            :content="item.content" 
         />
         <Paragraphe 
             v-if="item.type == 'paragraphe'" 
-            :key="level + '-' + item.level + '-' + index"
-            :level="level + '-' + item.level + '-' + index" 
             :value="item.value" 
         />
         <Picture 
             v-else-if="item.type == 'image'" 
-            :key="level + '-' + item.level + '-' + index"
-            :level="level + '-' + item.level + '-' + index" 
             :src="item.src" 
             :alt="item.alt" 
         />
@@ -85,7 +78,7 @@ export default {
       .then(response => response.data)
       .then(response => {
         if (response.status) {
-          this.item = response.content;
+          this.item = response.content[0];
           this.isError = false;
         } else {
           this.errorMessage = response.error
@@ -93,12 +86,29 @@ export default {
       });
   },
   methods: {
-      updateBloc() {
-          return;
-      },
-      deleteBloc() {
-          return;
+    updateBloc() {
+        return;
+    },
+    deleteHandler() {
+      var msg = this.item.type=='container'?
+        "Êtes-vous sûr(e) de vouloir supprimer ce composant et l'ensemble de ses enfants ?" :
+        "Êtes-vous sûr(e) de vouloir supprimer ce composant ?"
+      ;
+
+      if (confirm(msg)) {
+        this.$axios
+          .get("deleteBloc?book_id="+this.$route.params.id+"&position="+this.position)
+          .then(res => res.data)
+          .then(response => {
+            if (response.status) {
+              window.location.href = '/book-write/2?position=root';
+            } else {
+              this.isError = true;
+              this.errorMessage = response.error;
+            }
+          });
       }
+    }
   }
 };
 </script>

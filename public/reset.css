@@ -154,11 +154,20 @@ span.li .edit-button {
     width: 1.5rem;
 }
 
-span.li h3 {
+span.li a.transparent {
+    text-decoration: none;
+    display: block;
+    width: inherit;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+span.li a.transparent h3 {
     font-weight: bold;
     font-family: var(--font-title);
     font-size: 1.3rem;
-    width: inherit;
+    width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

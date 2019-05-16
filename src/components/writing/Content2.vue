@@ -7,11 +7,13 @@
 
 <template>
 	<div class="transparent">
-		<span v-if="title" class="li">
-			<i class="fas fa-sitemap"></i>
-			<h3 @click="test()">{{title}}</h3>
-			<EditButton :position="position" />
-		</span>
+			<span v-if="title" class="li title">
+				<i class="fas fa-sitemap"></i>
+				<a :href="'/book-write/'+this.$route.params.id+'?position='+this.position" class="transparent">
+					<h3 @click="test()">{{title}}</h3>
+				</a>
+				<EditButton :position="position" />
+			</span>
 
 		<div class="ul">
 			<template v-for="(item, index) in content">
